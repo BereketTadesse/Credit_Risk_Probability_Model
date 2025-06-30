@@ -1,1 +1,9 @@
-# Credit_Risk_Probability_Model
+📌 Credit Scoring Business Understanding
+1. Basel II Accord and Model Interpretability
+The Basel II Accord emphasizes that banks must hold sufficient capital based on their credit risk exposure. It requires that risk models used to estimate these exposures be transparent, interpretable, and well-documented, allowing internal and regulatory validation. This means that models used for credit scoring should not be black-box models that cannot be explained. Interpretability ensures that banks understand how predictions are made and can justify credit decisions to regulators and customers, reducing operational and compliance risks.
+
+2. Necessity and Risks of Proxy Variables
+Since our dataset lacks a direct “default” label, creating a proxy variable (e.g., using overdue status or payment delays as an indicator of default) is necessary to train any supervised model. However, relying on proxies introduces business risks, including misclassification, biased decisions, and regulatory challenges if the proxy does not accurately represent true default behavior. Poor proxy design could lead to unfair credit decisions, financial losses, and legal liabilities.
+
+3. Trade-offs: Interpretable vs Complex Models
+Using a simple, interpretable model, like Logistic Regression with Weight of Evidence (WoE), provides clear insights into how each feature affects credit risk, aligning with regulatory expectations for transparency. However, its predictive performance may be lower compared to complex models like Gradient Boosting, which can capture non-linear relationships and interactions but act as black boxes. In regulated financial contexts, the trade-off is between regulatory compliance and trust (favoring interpretable models) versus potentially higher accuracy and competitive advantage (favoring complex models). Often, banks choose simpler models to ensure compliance, fairness, and ease of explanation to both regulators and customers.
