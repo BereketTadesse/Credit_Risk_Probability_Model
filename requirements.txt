@@ -9,3 +9,5 @@ xverse
 woe
 python-multipart
 docker
+pytest>=7.0.0
+
