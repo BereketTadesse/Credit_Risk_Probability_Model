@@ -4,7 +4,6 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.cluster import KMeans
-
 def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     This function takes a raw dataframe and returns a preprocessed dataframe.
@@ -19,13 +18,11 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     # Remove target and other unnecessary columns from feature lists
     if 'FraudResult' in numerical_features:
         numerical_features.remove('FraudResult')
-
     features_to_remove = ['TransactionId', 'BatchId', 'AccountId', 'SubscriptionId', 'CustomerId', 'CurrencyCode', 'CountryCode', 'ProviderId', 'ProductId', 'ChannelId']
     for feature in features_to_remove:
         if feature in categorical_features:
             categorical_features.remove(feature)
-
-    # Create preprocessing pipelines for numerical and categorical features
+    # Create preprocessing pipeline for numerical and categorical feature
     numerical_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='median')),
         ('scaler', StandardScaler())
