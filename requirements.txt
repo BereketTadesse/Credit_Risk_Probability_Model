@@ -1,1 +1,11 @@
-
+scikit-learn
+pandas
+numpy
+mlflow
+fastapi
+uvicorn
+flake8
+xverse
+woe
+python-multipart
+docker
